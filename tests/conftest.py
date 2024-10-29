@@ -7,6 +7,9 @@ from db import db
 
 @pytest.fixture(autouse=True, scope="function")
 def session(test_app):
+    """
+    Wrap a test function in an app context, create tables before, then rollback and drop tables after the function.
+    """
     with test_app.app_context():
         db.session.begin()
 
@@ -20,6 +23,9 @@ def session(test_app):
 
 @pytest.fixture(autouse=True, scope="session")
 def postgresql():
+    """
+    Set up a postgres instance for testing
+    """
     with testing.postgresql.Postgresql() as postgresql:
         yield postgresql
 

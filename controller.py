@@ -1,7 +1,6 @@
 from flask import Blueprint, request
 from model import ModelForTest
-from repository import update_or_create, update_or_create_naive
-
+from repository import test_repository
 
 controller = Blueprint("controller", __name__)
 
@@ -13,19 +12,17 @@ def health():
 
 @controller.route("/upsert_naive", methods=["POST"])
 def upsert_testing_model_naive():
-    update_or_create_naive(
+    test_repository.update_or_create_naive(
         request.json,
         [ModelForTest.key.name],
-        ModelForTest,
     )
     return "", 200
 
 
 @controller.route("/upsert", methods=["POST"])
 def upsert_testing_model():
-    update_or_create(
+    test_repository.update_or_create(
         request.json,
         [ModelForTest.key.name],
-        ModelForTest,
     )
     return "", 200
