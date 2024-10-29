@@ -1,6 +1,6 @@
 from flask import Flask
 from controller import controller
-from repository import db
+from db import db
 
 
 def create_app():

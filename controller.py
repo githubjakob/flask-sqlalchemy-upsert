@@ -8,7 +8,7 @@ controller = Blueprint("controller", __name__)
 
 @controller.route("/health", methods=["GET"])
 def health():
-    return None, 200
+    return "", 200
 
 
 @controller.route("/upsert_naive", methods=["POST"])
@@ -18,7 +18,7 @@ def upsert_testing_model_naive():
         [ModelForTest.key.name],
         ModelForTest,
     )
-    return None, 200
+    return "", 200
 
 
 @controller.route("/upsert", methods=["POST"])
@@ -28,4 +28,4 @@ def upsert_testing_model():
         [ModelForTest.key.name],
         ModelForTest,
     )
-    return None, 200
+    return "", 200

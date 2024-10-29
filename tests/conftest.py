@@ -2,7 +2,7 @@ import pytest
 import testing.postgresql
 
 from app import app
-from repository import db
+from db import db
 
 
 @pytest.fixture(autouse=True, scope="function")

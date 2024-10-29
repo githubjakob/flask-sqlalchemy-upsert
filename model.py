@@ -1,15 +1,14 @@
 import uuid
 from typing import TypeVar
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column
+from db import db
 
 
-class Base(DeclarativeBase):
+class Base(db.Model):
     id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
 
 
 class ModelForTest(Base):
-    __tablename__ = "model_for_test"
-
     key: Mapped[str] = mapped_column(unique=True)
     data: Mapped[str] = mapped_column()
 

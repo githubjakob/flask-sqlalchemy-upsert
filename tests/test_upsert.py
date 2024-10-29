@@ -7,8 +7,9 @@ from time import sleep
 import pytest
 import requests
 from app import app
+from db import db
 from model import ModelForTest
-from repository import db
+
 
 SERVER_URL = "http://127.0.0.1:5000"
 

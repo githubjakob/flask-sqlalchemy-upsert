@@ -4,9 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import and_, UniqueConstraint, Index
 import psycopg2
 from sqlalchemy.exc import IntegrityError
+from db import db
 from model import Base, ModelType
-
-db = SQLAlchemy(model_class=Base)
 
 
 def _to_model(
