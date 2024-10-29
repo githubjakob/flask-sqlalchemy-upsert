@@ -1,0 +1,34 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Zeppelin ignored files
+/ZeppelinRemoteNotebooks/
+.idea
+*.pyc
+__pycache__
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+/.env
+/.env.test
+/.env.dev
+/.env.rc
+/.env.staging
+/.env.production
+/.mypy_cache
+/test_report
+
+venv/
+.vscode/
+.python-version
+*.db
+
+.coverage
